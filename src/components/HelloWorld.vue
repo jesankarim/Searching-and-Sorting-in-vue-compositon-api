@@ -15,11 +15,12 @@
       </select>
     </label>
 
-    <ul>
+    <ul class="order" v-if="filteredProducts.length>0">
       <li v-for="p in filteredProducts" :key="p.id">
         {{ p.name }} - ${{ p.price }}
       </li>
     </ul>
+    <p v-else>No Product Avaliable</p>
   </div>
 </template>
 
@@ -54,5 +55,8 @@ const filteredProducts = computed(() => {
 </script>
 
 <style scoped>
+.order li{
+  list-style: none;
+}
 
 </style>
